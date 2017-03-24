@@ -1,0 +1,11 @@
+<div ng-controller="usersController" class="container">
+	<div class="login" style="width: 300px; margin: 25% auto ; border: 1px solid black ">
+		<form name="myForm"> 
+
+			Your Name: <input name="myName" ng-model="newUser.name"  type="text" required />
+			<div class="input-field " style="text-align: right">
+			<button ng-disabled="myForm.$pristine|| myForm.$invalid">	<a ng-click="addUser()" >Add User</a></button>
+			</div>
+		</form>
+	</div>
+</div>

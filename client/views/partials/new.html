@@ -1,0 +1,53 @@
+<div class="container" ng-controller="pollsController">
+	<div class="new" >
+		<div class="row">  
+	    	
+	    	<!-- FORM ============ -->
+		    <form name="pollForm" ng-submit="submitForm()" novalidate>
+                <fieldset>
+							 <legend>Question polls & answers</legend>
+   
+		        <!-- QUESTION -->
+		        <div> 
+		        	<div  ng-class="{ 'has-error' : pollForm.question.$invalid && !pollForm.question.$pristine }">
+		            	<label>Question</label>
+		            	<input type="text" name="question" class="form-control" ng-minlength="8" ng-model="newPoll.question" required>
+		            	<p ng-show="pollForm.question.$error.minlength" class="help-block">Options need to be at least 8 characters long.</p>
+		        	</div>
+		     	 </div>
+		        <!-- OPTIONS -->
+		        <div > 
+		        	<div ng-class="{ 'has-error' : pollForm.option1.$invalid && !pollForm.option1.$pristine }">
+		            	<label>Answer- option 1</label>
+		            	<input type="text" name="option1" class="form-control" ng-model="newPoll.option1" ng-minlength="3" required>
+		            	<p ng-show="pollForm.option1.$error.minlength" class="help-block">Options need to be at least 3 characters long.</p>
+		        	</div>
+				</div>
+		        <div > 
+		        	<div  ng-class="{ 'has-error' : pollForm.option2.$invalid && !pollForm.option2.$pristine }">
+		            	<label>Answer- option 2</label>
+		            	<input type="text" name="option2" class="form-control" ng-model="newPoll.option2" ng-minlength="3" required>
+		            	<p ng-show="pollForm.option2.$error.minlength" class="help-block">Options need to be at least 3 characters long.</p>
+		        	</div>
+				</div>
+		        <div > 
+		        	<div  ng-class="{ 'has-error' : pollForm.option3.$invalid && !pollForm.option3.$pristine }">
+		            	<label>Answer- option 3</label>
+		            	<input type="text" name="option3" class="form-control" ng-model="newPoll.option3" ng-minlength="3" required>
+		            	<p ng-show="pollForm.option3.$error.minlength" class="help-block">Options need to be at least 3 characters long.</p>
+		        	</div>
+				</div>
+		        <div > 
+		        	<div ng-class="{ 'has-error' : pollForm.option4.$invalid && !pollForm.option4.$pristine }">
+		            	<label>Answer- option 4</label>
+		            	<input type="text" name="option4" class="form-control" ng-model="newPoll.option4" ng-minlength="3" required>
+		            	<p ng-show="pollForm.option4.$error.minlength" class="help-block">Options need to be at least 3 characters long.</p>
+		        	</div>
+		        </div>
+				<br><br>
+		        <button ng-click="addPoll()" type="submit"  ng-disabled="pollForm.$invalid">Submit</button>
+		        </fieldset>
+		    </form>
+		</div>
+ 	</div>
+</div>
